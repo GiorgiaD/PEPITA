@@ -56,3 +56,7 @@ python main_pytorch.py --exp_name Experiment2 \
 
 The argument `Bstd` defines the standard deviation of the projection matrix. 
 Here we use `B` instead of `F` (paper) to denote the projection matrix to avoid confusion with torch.nn.functional.
+
+## Convergence rate
+
+The notebook `plot_compute_slowness.py` contains the function to extract the convergence rate as "slowness" parameter.
