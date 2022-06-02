@@ -59,4 +59,4 @@ Here we use `B` instead of `F` (paper) to denote the projection matrix to avoid 
 
 ## Convergence rate
 
-The notebook `plot_compute_slowness.py` contains the function to extract the convergence rate as "slowness" parameter.
+The notebook `plot_compute_slowness.ipynb` contains the function to extract the convergence rate as "slowness" parameter.
