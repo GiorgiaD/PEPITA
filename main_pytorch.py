@@ -103,7 +103,7 @@ parser.add_argument('-win', '--w_init',
                     type=str, default='he_uniform', #'he_uniform', 
                     help="Weight initialization type. Options: rnd, zero, ones, xav, he, he_uniform, nok, cir")
 parser.add_argument('-mod', '--model',
-                    type=str, default='NetFC2x1024DOcust_cif', #Net1conv1fcL
+                    type=str, default='Net1conv1fcXL_cif', #Net1conv1fcL
                     help="Network structure. Options NetFC1x1024DOcust,NetClark,NetGithub,NetGithub_cif,NetGithub_BP,NetGithub_cif_BP,NetConvHuge,NetConvHuge_BP,NetCroc_cif_BP,NetCroc_BP,NetCroc_cif_BP_bn,NetClark")
 args = parser.parse_args()
 
