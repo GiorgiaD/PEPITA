@@ -21,7 +21,8 @@ from torch.autograd import Variable
 import matplotlib.pyplot as plt
 import numpy as np
 
-# convolutional models
+# convolutional models for PEPITA 
+# note that the softmax operation needs to be removed to use the models with BP
 
 class Net1conv1fcXL(nn.Module):
     def __init__(self,ch_input,nout):
@@ -99,79 +100,7 @@ def ev(this_out_diff, this_inp, bs, chin, chout, ks):
     prod_mul = torch.mean(prod_mul,axis=0)  # average across batchsize
     return prod_mul
 
-# fully connected models
 
-    
-class NetFC1x1024DOcust(nn.Module):
-    def __init__(self,ch_input,nout):
-        super().__init__()
-        self.fc1 = nn.Linear(28*28*ch_input,1024,bias=False)
-        self.fc2 = nn.Linear(1024, nout,bias=False)
-        
-        fc1_nin = 28*28*1
-        fc1_limit = np.sqrt(6.0 / fc1_nin)
-        torch.nn.init.uniform_(self.fc1.weight, a=-fc1_limit, b=fc1_limit)
-        fc2_nin = 1024
-        fc2_limit = np.sqrt(6.0 / fc2_nin)
-        torch.nn.init.uniform_(self.fc2.weight, a=-fc2_limit, b=fc2_limit)
-        
-
-    def forward(self, x, do_masks):
-        x = torch.flatten(x, 1) # flatten all dimensions except batch
-        x = F.relu(self.fc1(x))
-        if do_masks is not None:
-            x = x * do_masks[0]
-        x = F.softmax(self.fc2(x))
-        return x
-    
-class NetFC1x1024DOcust_cif(nn.Module):
-    def __init__(self,ch_input,nout):
-        super().__init__()
-        self.fc1 = nn.Linear(32*32*ch_input,1024,bias=False)
-        self.fc2 = nn.Linear(1024, nout,bias=False)
-        
-        fc1_nin = 32*32*3
-        fc1_limit = np.sqrt(6.0 / fc1_nin)
-        torch.nn.init.uniform_(self.fc1.weight, a=-fc1_limit, b=fc1_limit)
-        fc2_nin = 1024
-        fc2_limit = np.sqrt(6.0 / fc2_nin)
-        torch.nn.init.uniform_(self.fc2.weight, a=-fc2_limit, b=fc2_limit)
-        
-
-    def forward(self, x, do_masks):
-        x = torch.flatten(x, 1) # flatten all dimensions except batch
-        x = F.relu(self.fc1(x))
-        if do_masks is not None:
-            x = x * do_masks[0]
-        x = F.softmax(self.fc2(x))
-        return x
-    
-
-    
-class NetFC1x500(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.fc1 = nn.Linear(28*28*1,500,bias=False)
-        self.fc2 = nn.Linear(500, 10,bias=False)
-        
-        fc1_nin = 28*28*1
-        fc1_limit = np.sqrt(6.0 / fc1_nin)
-        torch.nn.init.uniform_(self.fc1.weight, a=-fc1_limit, b=fc1_limit)
-        fc2_nin = 500
-        fc2_limit = np.sqrt(6.0 / fc2_nin)
-        torch.nn.init.uniform_(self.fc2.weight, a=-fc2_limit, b=fc2_limit)
-        
-        
-        # Define proportion or neurons to dropout
-        #self.dropout = nn.Dropout(0.10)
-
-    def forward(self, x, do_masks):
-        x = torch.flatten(x, 1) # flatten all dimensions except batch
-        x = F.relu(self.fc1(x))
-        #x = self.dropout(x)
-        x = F.softmax(self.fc2(x))
-        return x
- 
     
 
 
