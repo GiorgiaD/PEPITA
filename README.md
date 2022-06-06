@@ -60,3 +60,25 @@ Here we use `B` instead of `F` (paper) to denote the projection matrix to avoid 
 ## Convergence rate
 
 The notebook `plot_compute_slowness.ipynb` contains the function to extract the convergence rate as "slowness" parameter.
+
+
+## Citation
+```
+@misc{https://doi.org/10.48550/arxiv.2201.11665,
+  doi = {10.48550/ARXIV.2201.11665},
+  
+  url = {https://arxiv.org/abs/2201.11665},
+  
+  author = {Dellaferrera, Giorgia and Kreiman, Gabriel},
+  
+  keywords = {Neural and Evolutionary Computing (cs.NE), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  
+  title = {Error-driven Input Modulation: Solving the Credit Assignment Problem without a Backward Pass},
+  
+  publisher = {arXiv},
+  
+  year = {2022},
+  
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+```
