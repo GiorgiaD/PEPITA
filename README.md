@@ -20,6 +20,12 @@ Pytorch framework (convolutional models): Python 3.7.10, Numpy 1.19.2, Pytorch 1
 
 # Experiments  
 
+## Fully connected models - Pytorch version
+
+The notebook `Tutorial_PEPITA_FullyConnectedNets_CIFAR-10` provides a simple tutorial on how to implement and run the PEPITA training scheme for fully connected models. The entire framework is pytorch-based. The settings and results are the same as reported in the paper.
+
+The training for 100 epochs takes approximately 1.5 hours on CPU.
+
 ## Fully connected models - numpy version
 
 The experiments are run through `main.py`, which uses functions in `functions.py` and `utils.py`. 
