@@ -5,9 +5,7 @@ Code to run the simulations of the paper:
 
 Giorgia Dellaferrera, Gabriel Kreiman
 
-https://arxiv.org/abs/2201.11665
-
-To be presented at ICML 2022.
+Presented at ICML 2022: https://proceedings.mlr.press/v162/dellaferrera22a.html
 
 
 # Requirements
@@ -22,7 +20,7 @@ Pytorch framework (convolutional models): Python 3.7.10, Numpy 1.19.2, Pytorch 1
 
 ## Fully connected models - Pytorch version
 
-The notebook `Tutorial_PEPITA_FullyConnectedNets_CIFAR-10` provides a simple tutorial on how to implement and run the PEPITA training scheme for fully connected models. The entire framework is pytorch-based. The settings and results are the same as reported in the paper.
+The notebook `Tutorial_PEPITA_FullyConnectedNets_CIFAR-10.ipynb` provides a simple tutorial on how to implement and run the PEPITA training scheme for fully connected models. The entire framework is pytorch-based. The settings and results are the same as reported in the paper.
 
 The training for 100 epochs takes approximately 1.5 hours on CPU.
 
@@ -70,21 +68,20 @@ The notebook `plot_compute_slowness.ipynb` contains the function to extract the 
 
 ## Citation
 ```
-@misc{https://doi.org/10.48550/arxiv.2201.11665,
-  doi = {10.48550/ARXIV.2201.11665},
-  
-  url = {https://arxiv.org/abs/2201.11665},
-  
-  author = {Dellaferrera, Giorgia and Kreiman, Gabriel},
-  
-  keywords = {Neural and Evolutionary Computing (cs.NE), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  
-  title = {Error-driven Input Modulation: Solving the Credit Assignment Problem without a Backward Pass},
-  
-  publisher = {arXiv},
-  
-  year = {2022},
-  
-  copyright = {arXiv.org perpetual, non-exclusive license}
+
+@InProceedings{pmlr-v162-dellaferrera22a,
+  title = 	 {Error-driven Input Modulation: Solving the Credit Assignment Problem without a Backward Pass},
+  author =       {Dellaferrera, Giorgia and Kreiman, Gabriel},
+  booktitle = 	 {Proceedings of the 39th International Conference on Machine Learning},
+  pages = 	 {4937--4955},
+  year = 	 {2022},
+  editor = 	 {Chaudhuri, Kamalika and Jegelka, Stefanie and Song, Le and Szepesvari, Csaba and Niu, Gang and Sabato, Sivan},
+  volume = 	 {162},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {17--23 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://proceedings.mlr.press/v162/dellaferrera22a/dellaferrera22a.pdf},
+  url = 	 {https://proceedings.mlr.press/v162/dellaferrera22a.html},
 }
+
 ```
